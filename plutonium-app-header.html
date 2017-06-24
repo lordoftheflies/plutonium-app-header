@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="shared-icons.html">
 
 <dom-module id="plutonium-app-header">
   <template>
@@ -7,7 +8,16 @@
         display: block;
       }
     </style>
+    <div id="namedContainer">
+      <slot name="named"></slot>
+    </div>
     <h2>Hello [[prop1]]!</h2>
+
+
+      <paper-icon-button icon="shared-icons:menu" drawer-toggle></paper-icon-button>
+      <div main-title>[[applicationTitle]]</div>
+      <div main-title>[[applicationTitle]]</div>
+
   </template>
 
   <script>
@@ -23,9 +33,9 @@
       static get is() { return 'plutonium-app-header'; }
       static get properties() {
         return {
-          prop1: {
+            applicationTitle: {
             type: String,
-            value: 'plutonium-app-header'
+            value: 'My application'
           }
         };
       }
